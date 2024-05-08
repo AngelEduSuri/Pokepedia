@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pokepedia/presentation/ui/screens/splash/pokepedia_splash_screen.dart';
+import 'package:pokepedia/presentation/navigation/app_router.dart';
 
 void main() {
   runApp(const MainApp());
@@ -10,8 +10,9 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: const PokepediaSplashScreen()
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
+      routerConfig: appRoutes,
     );
   }
 }
