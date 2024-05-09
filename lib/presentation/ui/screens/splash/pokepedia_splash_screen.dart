@@ -18,42 +18,42 @@ class _PokepediaSplashScreenState extends State<PokepediaSplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Stack(
-          children: [
-            Column(
-              children: <Widget>[
-                Expanded(
-                  child: FadeOutUpBig(
-                    curve: Curves.decelerate,
-                    animate: initAnimation,
-                    delay: const Duration(milliseconds: 500),
-                    child: const PokepediaCover(),
+      body: GestureDetector(
+        onTap: () => setState(() => initAnimation = true),
+        child: Center(
+          child: Stack(
+            children: [
+              Column(
+                children: <Widget>[
+                  Expanded(
+                    child: FadeOutUpBig(
+                      curve: Curves.decelerate,
+                      animate: initAnimation,
+                      delay: const Duration(milliseconds: 500),
+                      child: const PokepediaCover(),
+                    ),
                   ),
-                ),
-                const SizedBox(height: 10),
-                Expanded(
-                  child: FadeOutDownBig(
-                    curve: Curves.decelerate,
-                    animate: initAnimation,
-                    delay: const Duration(milliseconds: 500),
-                    child: const PokepediaCover(isTopCover: false),
-                  ),
-                )
-              ],
-            ),
-            Center(
-              child: ZoomOut(
-                animate: initAnimation,
-                duration: const Duration(milliseconds: 1200),
-                child: GestureDetector(
-                  onTap: () => setState(() => initAnimation = true),
-                  child: const _Pokeball(),
-                ),
-                onFinish: (direction) => context.go(HomeRoute().route),
+                  const SizedBox(height: 10),
+                  Expanded(
+                    child: FadeOutDownBig(
+                      curve: Curves.decelerate,
+                      animate: initAnimation,
+                      delay: const Duration(milliseconds: 500),
+                      child: const PokepediaCover(isTopCover: false),
+                    ),
+                  )
+                ],
               ),
-            ),
-          ],
+              Center(
+                child: ZoomOut(
+                  animate: initAnimation,
+                  duration: const Duration(milliseconds: 1150),
+                  child: const _Pokeball(),
+                  onFinish: (direction) => context.go(HomeRoute().route),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
