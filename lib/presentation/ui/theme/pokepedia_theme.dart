@@ -13,7 +13,7 @@ class PokepediaTheme {
       tertiary: const Color(0xFFFEC91A),
       error: Colors.red.shade800,
       onError: Colors.white,
-      background: const Color(0xFF3C444C),
+      background: const Color(0xFF514F56),
       onBackground: Colors.white,
       surface: const Color(0xFF3C444C),
       onSurface: Colors.white,
