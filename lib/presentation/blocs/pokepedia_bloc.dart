@@ -29,6 +29,10 @@ class PokepediaBloc extends Bloc<PokepediaEvent, PokepediaState> {
       if (event is PokepediaEventLoadingData) {
         emit(state.copyWith(isLoading: event.isLoading));
       }
+
+      if (event is PokepediaEventUpdateOffset) {
+        emit(state.copyWith(offset: event.offset));
+      }
     });
 
     loadPokemonList();
@@ -47,6 +51,7 @@ class PokepediaBloc extends Bloc<PokepediaEvent, PokepediaState> {
     final pokemonListWithAbilities = pokemonList
         .map((pokemon) => pokemon.copyWith(abilities: pokemonAbilities))
         .toList();
+    add(PokepediaEventUpdateOffset(state.offset + state.limit));
     add(PokepediaEventLoadPokemonList(pokemonListWithAbilities));
     add(PokepediaEventLoadingData(false));
   }
@@ -81,5 +86,9 @@ class PokepediaBloc extends Bloc<PokepediaEvent, PokepediaState> {
     final newPokemonList = [...state.pokemonList];
     newPokemonList[state.pokemonIndexSelected] = newPokemon;
     add(PokepediaEventLoadPokemonList(newPokemonList));
+  }
+
+  Future<void> onRefresh() async {
+    loadPokemonList();
   }
 }

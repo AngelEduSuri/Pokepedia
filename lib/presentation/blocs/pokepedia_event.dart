@@ -21,3 +21,8 @@ class PokepediaEventLoadingData extends PokepediaEvent {
   final bool isLoading;
   PokepediaEventLoadingData(this.isLoading);
 }
+
+class PokepediaEventUpdateOffset extends PokepediaEvent {
+  final int offset;
+  PokepediaEventUpdateOffset(this.offset);
+}
