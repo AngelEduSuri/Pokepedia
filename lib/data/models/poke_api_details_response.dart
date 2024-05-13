@@ -6,10 +6,11 @@ class PokeApiDetailsResponse {
   final int baseExperience;
   final int height;
   final int weight;
+  final String imageUrl;
   final List<StatsResponse> stats;
   final List<TypesResponse> types;
 
-  PokeApiDetailsResponse({required this.id, required this.name, required this.baseExperience, required this.height, required this.weight, required this.stats, required this.types});
+  PokeApiDetailsResponse({required this.id, required this.name, required this.baseExperience, required this.height, required this.weight, required this.imageUrl, required this.stats, required this.types});
 
   @override
   String toString() {
@@ -23,6 +24,7 @@ class PokeApiDetailsResponse {
       baseExperience: json["base_experience"],
       height: json["height"],
       weight: json["weight"],
+      imageUrl: json["sprites"]["other"]["official-artwork"]["front_default"],
       stats: List<StatsResponse>.from(json["stats"].map((x) => StatsResponse.fromJson(x))),
       types: List<TypesResponse>.from(json["types"].map((x) => TypesResponse.fromJson(x))),
     );
