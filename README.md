@@ -4,14 +4,11 @@ Flutter Challenge
 
 A single page application that displays information about pokemons from the [PokeAPI](https://pokeapi.co/).
 
-<div style="display:flex;justify-content:center">
+<p align="center">
+  <img src="./assets/icon/icon_app.png" alt="drawing" width="200"/>
+</p>
 
-<div style="width:100px">
 
-![Pokepedia](./assets/icon/icon_app.png)
-
-</div>
-</div>
 
 ## Features
 
@@ -29,7 +26,8 @@ A single page application that displays information about pokemons from the [Pok
 | ![Pokepedia](https://i.ibb.co/LthpjCg/Screenshot-20240513-112831.png) | ![Pokepedia](https://i.ibb.co/DgDbwDw/Screenshot-20240513-112933.png) | ![Pokepedia](https://i.ibb.co/W3Sxk3B/Screenshot-20240513-113031.png) |
 |---| --- | --- | 
 
-[pokepedia.webm](https://github.com/AngelEduSuri/Pokepedia/assets/77578301/117305c5-cf0c-45c2-9c61-28c63a93a754)
+[pokepedia-demostration.webm](https://github.com/AngelEduSuri/Pokepedia/assets/77578301/284715d6-10f6-4532-b1c0-bf90b75f95b6)
+
 
 
 
