@@ -355,91 +355,93 @@ class _PokepediaStatsInfo extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorsScheme = Theme.of(context).colorScheme;
-    return ListView.builder(
-      itemCount: currentStats.length,
-      itemBuilder: (context, index) {
-        final newStat = currentStats[index].toSpanish();
-        final change = newStat.baseStat - baseStats[index].baseStat;
-        final isBaseStat = newStat.baseStat == baseStats[index].baseStat;
-        return Column(
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                SizedBox(
-                  width: 80,
-                  child: Text(
-                    newStat.name,
-                    style: Theme.of(context).textTheme.titleMedium,
+    return Center(
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: currentStats.length,
+        itemBuilder: (context, index) {
+          final newStat = currentStats[index].toSpanish();
+          final change = newStat.baseStat - baseStats[index].baseStat;
+          final isBaseStat = newStat.baseStat == baseStats[index].baseStat;
+          return Column(
+            children: [
+              Row(
+                children: [
+                  SizedBox(
+                    width: 80,
+                    child: Text(
+                      newStat.name,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    children: [
-                      SizedBox(
-                        height: 30,
-                        child: Stack(
-                          children: [
-                            Positioned(
-                              bottom: 1,
-                              left: 1,
-                              right: 1,
-                              child: TweenAnimationBuilder<double>(
-                                tween: Tween<double>(
-                                  begin: 0,
-                                  end: newStat.baseStat / 100,
-                                ),
-                                duration: const Duration(milliseconds: 500),
-                                builder: (context, value, child) =>
-                                    LinearProgressIndicator(
-                                      minHeight: 15,
-                                      value: value,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .tertiary,
-                                      backgroundColor: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                    ),
-                              ),
-                            ),
-                            Positioned(
-                              top: 1,
-                              right: 1,
-                              child: Text(
-                                '${change > 0 ? '+' : ''}$change',
-                                style: TextStyle(
-                                  fontFamily: "PokeFont",
-                                  color: isBaseStat
-                                      ? colorsScheme.tertiary
-                                      : (change > 1
-                                      ? Colors.green
-                                      : colorsScheme.primary),
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        SizedBox(
+                          height: 30,
+                          child: Stack(
+                            children: [
+                              Positioned(
+                                bottom: 1,
+                                left: 1,
+                                right: 1,
+                                child: TweenAnimationBuilder<double>(
+                                  tween: Tween<double>(
+                                    begin: 0,
+                                    end: newStat.baseStat / 100,
+                                  ),
+                                  duration: const Duration(milliseconds: 500),
+                                  builder: (context, value, child) =>
+                                      LinearProgressIndicator(
+                                        minHeight: 15,
+                                        value: value,
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .tertiary,
+                                        backgroundColor: Theme.of(context)
+                                            .colorScheme
+                                            .secondary,
+                                      ),
                                 ),
                               ),
-                            ),
-                          ],
+                              Positioned(
+                                top: 1,
+                                right: 1,
+                                child: Text(
+                                  '${change > 0 ? '+' : ''}$change',
+                                  style: TextStyle(
+                                    fontFamily: "PokeFont",
+                                    color: isBaseStat
+                                        ? colorsScheme.tertiary
+                                        : (change > 1
+                                        ? Colors.green
+                                        : colorsScheme.primary),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                      const SizedBox(height: 5)
-                    ],
+                        const SizedBox(height: 5)
+                      ],
+                    ),
                   ),
-                ),
-                const SizedBox(width: 10),
-                SizedBox(
-                  width: 30,
-                  child: Text(
-                    "${newStat.baseStat > 100 ? 100 : newStat.baseStat}",
-                    style: const TextStyle(
-                        color: Colors.green, fontFamily: "PokeFont"),
+                  const SizedBox(width: 10),
+                  SizedBox(
+                    width: 30,
+                    child: Text(
+                      "${newStat.baseStat > 100 ? 100 : newStat.baseStat}",
+                      style: const TextStyle(
+                          color: Colors.green, fontFamily: "PokeFont"),
+                    ),
                   ),
-                ),
-              ],
-            ),
-          ],
-        );
-      },
+                ],
+              ),
+            ],
+          );
+        },
+      ),
     );
   }
 }
