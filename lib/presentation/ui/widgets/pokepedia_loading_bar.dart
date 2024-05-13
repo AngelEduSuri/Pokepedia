@@ -6,13 +6,17 @@ class PokepediaLoadingBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
+    return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          CircularProgressIndicator(),
-          SizedBox(height: 15),
-          PokepediaText(text: "Cargando..."),
+          CircularProgressIndicator(
+            strokeWidth: 5,
+            valueColor: AlwaysStoppedAnimation<Color>(
+                Theme.of(context).colorScheme.tertiary),
+          ),
+          const SizedBox(height: 15),
+          const PokepediaText(text: "Cargando..."),
         ],
       ),
     );
