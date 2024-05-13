@@ -6,7 +6,7 @@ A single page application that displays information about pokemons from the [Pok
 
 <div style="display:flex;justify-content:center">
 
-<div style="width:200px">
+<div style="width:100px">
 
 ![Pokepedia](./assets/icon/icon_app.png)
 
@@ -28,6 +28,9 @@ A single page application that displays information about pokemons from the [Pok
 
 | ![Pokepedia](https://i.ibb.co/LthpjCg/Screenshot-20240513-112831.png) | ![Pokepedia](https://i.ibb.co/DgDbwDw/Screenshot-20240513-112933.png) | ![Pokepedia](https://i.ibb.co/W3Sxk3B/Screenshot-20240513-113031.png) |
 |---| --- | --- | 
+
+[pokepedia.webm](https://github.com/AngelEduSuri/Pokepedia/assets/77578301/117305c5-cf0c-45c2-9c61-28c63a93a754)
+
 
 
 
